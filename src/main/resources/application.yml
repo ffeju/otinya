@@ -1,0 +1,12 @@
+
+server:
+  port: 1314
+
+spring:
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite:E:\code\codeSpace\oa\otinya.db
+    username:
+    passowrd:
+  jackson:
+    date-format: yyyy-MM-dd'T'HH:mm:ss.SSS
