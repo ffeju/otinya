@@ -1,4 +1,4 @@
-package kcp.otinya.oa.plant.domain.po;
+package kcp.otinya.oa.plan.domain.po;
 
 import com.baomidou.mybatisplus.annotation.*;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -15,8 +15,8 @@ import java.time.LocalDateTime;
  */
 @Data
 @Accessors(chain = true)
-@TableName("PLANT")
-public class PlantPO {
+@TableName("PLAN")
+public class PlanPO {
 
     @Getter
     @AllArgsConstructor

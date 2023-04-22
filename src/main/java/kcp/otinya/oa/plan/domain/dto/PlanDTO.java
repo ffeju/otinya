@@ -1,12 +1,12 @@
-package kcp.otinya.oa.plant.domain.dto;
+package kcp.otinya.oa.plan.domain.dto;
 
-import kcp.otinya.oa.plant.domain.po.PlantPO;
+import kcp.otinya.oa.plan.domain.po.PlanPO;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 
 @Data
-public class PlantDTO {
+public class PlanDTO {
 
     /**
      * 主键id
@@ -46,6 +46,6 @@ public class PlantDTO {
     /**
      * 计划状态
      */
-    private PlantPO.STATUS status;
+    private PlanPO.STATUS status;
 
 }
