@@ -1,5 +1,6 @@
 package kcp.otinya.oa.plan.domain.dto;
 
+import kcp.otinya.oa.plan.domain.PlanStatus;
 import kcp.otinya.oa.plan.domain.po.PlanPO;
 import lombok.Data;
 
@@ -46,6 +47,6 @@ public class PlanDTO {
     /**
      * 计划状态
      */
-    private PlanPO.STATUS status;
+    private PlanStatus status;
 
 }

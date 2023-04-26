@@ -1,14 +1,12 @@
 package kcp.otinya.oa.plan.domain.po;
 
 import com.baomidou.mybatisplus.annotation.*;
-import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.AllArgsConstructor;
+import kcp.otinya.oa.common.BasePO;
+import kcp.otinya.oa.plan.domain.PlanStatus;
 import lombok.Data;
-import lombok.Getter;
 import lombok.experimental.Accessors;
 
 import java.time.LocalDateTime;
-
 
 /**
  * 计划表
@@ -16,18 +14,7 @@ import java.time.LocalDateTime;
 @Data
 @Accessors(chain = true)
 @TableName("PLAN")
-public class PlanPO {
-
-    @Getter
-    @AllArgsConstructor
-    public static enum STATUS{
-        ERROR(0,"异常"),
-        NORMAL(1,"正常"),
-        OFF(2,"停用");
-        @EnumValue
-        private Integer code;
-        private String desc;
-    }
+public class PlanPO extends BasePO {
 
     /**
      * 主键id
@@ -36,47 +23,63 @@ public class PlanPO {
     private String id;
 
     /**
+     * 父计划id，无父计划则为-1
+     */
+    @TableField(value = "PID")
+    private String PId;
+
+    /**
      * 名称
      */
     @TableField(value = "NAME")
     private String name;
 
     /**
-     * 创建时间
+     * 描述
      */
-    @JsonFormat(timezone="GTM+8",pattern="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
-    @TableField(value = "CREATE_TIME")
-    private LocalDateTime createTime;
+    @TableField(value = "DESC")
+    private String desc;
 
     /**
-     * 最后修改时间
+     * 预计结束时间
      */
-    @JsonFormat(timezone="GTM+8",pattern="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
-    @TableField(value = "MODIFY_TIME")
-    private LocalDateTime modifyTime;
+    @TableField(value = "ESTIMATE_END_TIME")
+    private LocalDateTime estimateEndTime;
 
     /**
-     * 创建人id
+     * 实际结束时间
      */
-    @TableField(value = "CREATER_ID")
-    private String createrId;
+    @TableField(value = "END_TIME")
+    private LocalDateTime endTime;
 
     /**
-     * 修改人id
+     * 是否超期
      */
-    @TableField(value = "MODIFIER_ID")
-    private String modifierId;
+    @TableField(value = "OVERDUE")
+    private Boolean overdue;
 
     /**
-     * 是否为测试数据状态
+     * 是否是多人模式
      */
-    @TableField(value = "IS_TEST")
-    private Boolean isTest;
+    @TableField(value = "MULTI_PLAYER")
+    private Boolean Multiplayer;
+
+    /**
+     * 决策超时时间
+     */
+    @TableField(value = "DECISION_TIME_OUT")
+    private LocalDateTime decisionTimeOut;
+
+    /**
+     * 是否互斥模式
+     */
+    @TableField(value = "MUTUALLY_EXCLUSIVE")
+    private Boolean mutuallyExclusive;
 
     /**
      * 计划状态
      */
     @TableField(value = "STATUS")
-    private STATUS status;
+    private PlanStatus status;
 
 }
