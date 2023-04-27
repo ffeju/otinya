@@ -5,7 +5,7 @@ server:
 spring:
   datasource:
     driver-class-name: org.sqlite.JDBC
-    url: jdbc:sqlite:E:\code\codeSpace\otinya\otinya.db
+    url: jdbc:sqlite:C:\codeWorkSpace\otinya\otinya.db
     username:
     passowrd:
   jackson:

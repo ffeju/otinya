@@ -41,6 +41,12 @@ public class PlanPO extends BasePO {
     private String desc;
 
     /**
+     * 预计开始时间
+     */
+    @TableField(value = "ESTIMATE_START_TIME")
+    private LocalDateTime estimateStartTime;
+
+    /**
      * 预计结束时间
      */
     @TableField(value = "ESTIMATE_END_TIME")
